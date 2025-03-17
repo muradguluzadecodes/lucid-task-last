@@ -25,11 +25,7 @@ const FormulaInput = () => {
       const isMathOperator = checkOperators(trimmedValue);
       const isNumber = Number(inputValue?.trim());
 
-      if (
-        (event.key === " " || event.key === "Enter") &&
-        inputValue?.trim() &&
-        isMathOperator
-      ) {
+      if ((event.key === " " || event.key === "Enter") && inputValue?.trim()) {
         event.preventDefault();
 
         const type =
