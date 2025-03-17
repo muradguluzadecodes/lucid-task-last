@@ -20,29 +20,36 @@ const FormulaInput = () => {
   console.log(tags);
 
   const handleInputKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
-    if ((event.key === " " || event.key === "Enter") && inputValue?.trim()) {
-      event.preventDefault(); // Prevent adding extra spaces
-
-      const trimmedValue = inputValue.trim();
+    const trimmedValue = inputValue?.trim();
+    if (trimmedValue) {
       const isMathOperator = checkOperators(trimmedValue);
-      const isNumber = Number(inputValue.trim());
-      const type =
-        (isNumber && "number") || (isMathOperator && "operator") || null;
+      const isNumber = Number(inputValue?.trim());
 
-      if (type) {
-        const newOperator = {
-          id: crypto.randomUUID(),
-          name: trimmedValue,
-          value: trimmedValue,
-          type: type as "operator" | "number" | null,
-        };
+      if (
+        (event.key === " " || event.key === "Enter") &&
+        inputValue?.trim() &&
+        isMathOperator
+      ) {
+        event.preventDefault();
 
-        if (tags && tags.length > 0) {
-          setTags([...tags, newOperator]);
-        } else {
-          setTags([newOperator]);
+        const type =
+          (isNumber && "number") || (isMathOperator && "operator") || null;
+
+        if (type) {
+          const newOperator = {
+            id: crypto.randomUUID(),
+            name: trimmedValue,
+            value: trimmedValue,
+            type: type as "operator" | "number" | null,
+          };
+
+          if (tags && tags.length > 0) {
+            setTags([...tags, newOperator]);
+          } else {
+            setTags([newOperator]);
+          }
+          setInputValue("");
         }
-        setInputValue("");
       }
     }
   };
