@@ -1,0 +1,48 @@
+@use 'functions' as *;
+
+$tabletPx: 900px;
+$smallDesktopPx: 1024px;
+$desktopPx: 1391px;
+
+
+@mixin tabletAndAbove($offset: 0px) {
+  @media only screen and (min-width: rem($tabletPx + $offset)) {
+    @content;
+  }
+}
+
+@mixin smallDesktopAndAbove($offset: 0px) {
+  @media only screen and (min-width: rem($smallDesktopPx + $offset)) {
+    @content;
+  }
+}
+
+@mixin desktopAndAbove($offset: 0px) {
+  @media only screen and (min-width: rem($desktopPx + $offset)) {
+    @content;
+  }
+}
+
+@mixin isMobile() {
+  @media only screen and (max-width: rem($tabletPx - 1px)) {
+    @content;
+  }
+}
+
+@mixin isTablet() {
+  @media only screen and (min-width: calc(rem($tabletPx))) and (max-width: rem($smallDesktopPx - 1px)) {
+    @content;
+  }
+}
+
+@mixin isSmallDesktop() {
+  @media only screen and (min-width: rem($smallDesktopPx)) and (max-width: rem($desktopPx - 1px)) {
+    @content;
+  }
+}
+
+@mixin isDesktop($offset: 0px) {
+  @media only screen and (min-width: rem($desktopPx + $offset)) {
+    @content;
+  }
+}

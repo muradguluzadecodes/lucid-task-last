@@ -1,0 +1,31 @@
+.result {
+  font-size: 24px;
+  font-family: Poppins, sans-serif;
+  color: #000;
+  border-bottom: 1px solid #eff0f2;
+  padding:20px 30px;
+ background-color:  #f6f8fa;
+  margin: 0;
+
+}
+
+.formatsWrapper {
+  display: flex;
+  gap: 60px;
+
+  h4 {
+    font-size: 20px;
+  }
+
+  .correct {
+    p {
+      color: #4242ff;
+    }
+  }
+
+  .incorrect {
+    p {
+      color: #f54747;
+    }
+  }
+}

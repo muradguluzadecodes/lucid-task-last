@@ -1,0 +1,78 @@
+.container {
+  padding: 0 10% !important;
+
+  @media screen and (min-width: 1024px)  {
+  padding: 0 25% !important;
+  }
+}
+
+.appLayout {
+  width: 100%;
+  min-height: 100vh;
+  height: fit-content;
+
+  .blocksWrapper {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+
+  .header {
+    padding: 6px 20px;
+    border-bottom: 1px solid #a6a6a6;
+    color: #4a555b;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .heading {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+
+      svg {
+        width: 20px;
+        fill: #4a555b;
+        transform: translateY(-4px);
+      }
+    }
+
+    .addNewBtn {
+      width: 24px;
+      height: 24px;
+      background-color: #0051ff;
+      color: #fff;
+      border: none;
+      font-size: 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 4px;
+
+      p {
+        transform: translateY(1px);
+      }
+    }
+  }
+
+
+
+}
+
+
+@keyframes rocketAnimation {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(20px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+
+}

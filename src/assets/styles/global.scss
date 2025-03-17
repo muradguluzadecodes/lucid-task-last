@@ -1,0 +1,12 @@
+@use 'abstracts/index' as *;
+@import "layout/grid";
+
+html,
+body {
+  color: #000;
+  //background-color: $c-white-ff;
+  font-family: Inter, sans-serif;
+  line-height: normal;
+  font-weight: 400;
+  scroll-behavior: smooth;
+}

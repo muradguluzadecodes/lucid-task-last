@@ -1,0 +1,24 @@
+.container {
+  max-width: $desktopPx;
+  margin: 0 auto;
+
+  @include isMobile {
+    padding-left: rem(10px);
+    padding-right: rem(10px);
+  }
+
+  @include isTablet {
+    padding-left: rem(16px);
+    padding-right: rem(16px);
+  }
+
+  @include isSmallDesktop {
+    padding-left: rem(16px);
+    padding-right: rem(16px);
+  }
+
+  @include isDesktop(16) {
+    padding-left: rem(16px);
+    padding-right: rem(16px);
+  }
+}
