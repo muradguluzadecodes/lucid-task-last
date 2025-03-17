@@ -21,15 +21,34 @@ const FormulaInput = () => {
 
   const handleInputKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     const trimmedValue = inputValue?.trim();
+    const isNumber = Number(trimmedValue);
+
     if (trimmedValue) {
       const isMathOperator = checkOperators(trimmedValue);
-      const isNumber = Number(inputValue?.trim());
 
-      if ((event.key === " " || event.key === "Enter") && inputValue?.trim()) {
+      const type =
+        (isNumber && "number") || (isMathOperator && "operator") || null;
+
+      if (isMathOperator && event.key === " ") {
+        if (type) {
+          const newOperator = {
+            id: crypto.randomUUID(),
+            name: trimmedValue,
+            value: trimmedValue,
+            type: type as "operator" | "number" | null,
+          };
+
+          if (tags && tags.length > 0) {
+            setTags([...tags, newOperator]);
+          } else {
+            setTags([newOperator]);
+          }
+          setInputValue("");
+        }
+      }
+
+      if (event.key === "Enter" && trimmedValue && isNumber) {
         event.preventDefault();
-
-        const type =
-          (isNumber && "number") || (isMathOperator && "operator") || null;
 
         if (type) {
           const newOperator = {
