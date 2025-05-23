@@ -3,12 +3,12 @@ import CodeMirror from "@uiw/react-codemirror";
 
 import { Container } from "../Container";
 
-import { cmExtensions } from "../../codemirror/extensions.ts";
+import { cmExtensions } from "../../codemirror/extensions";
 
 import s from "./style.module.scss";
 import { useQuery } from "@tanstack/react-query";
-import getFormulaList from "../../api/getFormulaList.tsx";
-import { useFormulaStore } from "../../store/formulaStore.tsx";
+import getFormulaList from "../../api/getFormulaList";
+import { useFormulaStore } from "../../store/formulaStore";
 import Result from "../Result";
 
 export default function AppLayout() {

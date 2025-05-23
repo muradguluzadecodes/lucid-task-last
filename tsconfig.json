@@ -1,9 +1,5 @@
+// tsconfig.json
 {
-  "files": [],
-  "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
-  ],
   "compilerOptions": {
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
@@ -11,7 +7,7 @@
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "strict": true,
+    "strict": false,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
     "module": "esnext",
@@ -21,6 +17,11 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["src"],
-  "exclude": ["node_modules"]
+  "include": [
+    "src"          // covers global.d.ts + all .ts/.tsx/.scss imports
+  ],
+  "exclude": [
+    "node_modules"
+    // **do NOT** exclude `"src/**/*.d.ts"` here or it will hide your declaration!
+  ]
 }

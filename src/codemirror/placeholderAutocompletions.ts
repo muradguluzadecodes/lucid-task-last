@@ -1,5 +1,5 @@
 import type { Completion } from "@codemirror/autocomplete";
-import { useFormulaStore } from "../store/formulaStore.tsx";
+import { useFormulaStore } from "../store/formulaStore";
 
 export function getFormulaCompletions(): Completion[] {
   const list = useFormulaStore.getState().formulaList ?? [];

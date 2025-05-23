@@ -1,12 +1,7 @@
-export const checkOperators = (value: string) => {
-  const mathOperators = new Set(["*", "+", "-", "/", "^"]);
-  return mathOperators.has(value);
-};
-
-export function stripFirstTwoTokens(str) {
+export function stripFirstTwoTokens(str: string): string {
   return (
     str
-      .replace(/\{([^}]+)\}/g, (_, inner) => {
+      .replace(/\{([^}]+)\}/g, (_: string, inner: string) => {
         const parts = inner.trim().split(/\s+/);
         const restParts = parts.slice(2); // drop first two
         const restJoined = restParts.join(" "); // "20 + 40" or "90"

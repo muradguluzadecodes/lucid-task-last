@@ -1,4 +1,4 @@
-import { Formula } from "./type.ts";
+import { Formula } from "./type";
 
 export default async function getFormulaList(): Promise<Formula[]> {
   try {

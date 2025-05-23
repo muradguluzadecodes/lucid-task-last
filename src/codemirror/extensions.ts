@@ -1,7 +1,7 @@
 import { basicSetup } from "@codemirror/basic-setup";
 import { placeholderPlugin } from "./placeholderPlugin";
 import { placeholderTheme } from "./theme";
-import { getFormulaCompletions } from "./placeholderAutocompletions.ts";
+import { getFormulaCompletions } from "./placeholderAutocompletions";
 
 import { autocompletion, completionKeymap } from "@codemirror/autocomplete";
 import { EditorView, keymap } from "@codemirror/view";

@@ -1,4 +1,11 @@
 import { create } from "zustand";
+interface Formula {
+  name: string;
+  value: string | number;
+  category: string;
+  id: string;
+  inputs?: string[];
+}
 
 interface FormulaStore {
   formulaList: any[] | null;
