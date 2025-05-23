@@ -85,6 +85,8 @@ const FormulaInput = () => {
     item.name.startsWith(inputValue as string),
   );
 
+  console.log("Re-rendered");
+
   return (
     <div className={s.wrapper}>
       <div className={s.formulaInput}>

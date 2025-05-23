@@ -1,14 +1,15 @@
 import { create } from "zustand";
 
-import { Tags } from "../api/type.ts";
-
 interface FormulaStore {
-  tagList: Tags[] | null;
-  setTagList: (tagList: Tags[] | null) => void;
+  formulaList: any[] | null;
+  setFormulaList: (tagList: any[]) => void;
+  inputValue: string;
+  setInputValue: (value: string) => void;
 }
 
 export const useFormulaStore = create<FormulaStore>((set) => ({
-  tagList: null,
-  setTagList: (tagList: Tags[] | null) => set(() => ({ tagList })),
-  blockList: [{ id: 1, tags: null }],
+  formulaList: null,
+  setFormulaList: (list: any[]) => set({ formulaList: list }),
+  inputValue: "",
+  setInputValue: (value: string) => set({ inputValue: value }),
 }));
